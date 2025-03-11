@@ -5,35 +5,9 @@ pipeline {
 
     stage('Build') {
       steps {
-        echo 'Building Docker Image'
+        echo 'Building Docker Image With November Class'
         // Build the docker image and push it to docker hub
       }
     }
-
-    stage('Test') {
-      steps {
-        echo 'Testing...'
-        // Run docker container and run tests on it
-      }
-    }
-
-
-     // Staging environment deployment
-
-
-    stage('Deploy') {
-      steps {
-        echo 'Deploying...'
-        // ssh -> ec2 
-        // docker run {new image}
-      }
-    }
-
-    stage('Message') {
-      steps {
-        echo 'Deployment Completed'
-      }
-    }
   }
-
 }
