@@ -1,24 +1,16 @@
 pipeline {
 
-    agent any
+    agent {label 'aws-agent'}
 
 
     environment {
         DOCKERHUB_USERNAME = 'doramar97'
         DOCKERHUB_PASSWORD = credentials('my-docker-pass')
-        DOCKERHUB_REPO = 'november'
+        DOCKERHUB_REPO = 'class-april'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
-        NODE  =  "${env.NODE_NAME}"
     }
 
     stages {
-
-        stage('Checkout Code') {
-            steps {
-                git branch: 'example', url: 'https://github.com/dor-amar/jenkins.git'
-            }
-        }
-
 
         stage('Build Docker Image') {
             steps {
@@ -28,7 +20,9 @@ pipeline {
                 '''
             }
         }
- 
+
+
+
     }
 }
 
