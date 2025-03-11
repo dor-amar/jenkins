@@ -6,7 +6,7 @@ pipeline {
     environment {
         DOCKERHUB_USERNAME = 'doramar97'
         DOCKERHUB_PASSWORD = credentials('my-docker-pass')
-        DOCKERHUB_REPO = 'class-april'
+        DOCKERHUB_REPO = 'november'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
 
@@ -20,8 +20,6 @@ pipeline {
                 '''
             }
         }
-
-
 
     }
 }
