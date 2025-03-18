@@ -40,7 +40,7 @@ pipeline {
     stage('Deployment') {
         steps {
             script {
-                sh "docker run -d doramar97/my-app-nov:latest"
+                sh "docker run -d -p 80:80 doramar97/my-app-nov:latest"
             }
         }
     }
