@@ -12,27 +12,28 @@ pipeline {
             git branch: 'main', url: 'https://github.com/dor-amar/jenkins.git'
         }
     }
-    stage('Build Docker image') {
-        steps {
+    // stage('Build Docker image') {
+    //     steps {
+    //         sh "docker build "
 
 
-        }
-    }
-    stage('Login to Docker') {
-        steps {
+    //     }
+    // }
+    // stage('Login to Docker') {
+    //     steps {
             
-        }
-    }
-    stage('Push Docker Image') {
-        steps {
+    //     }
+    // }
+    // stage('Push Docker Image') {
+    //     steps {
             
-        }
-    }
-    stage('Deployment') {
-        steps {
+    //     }
+    // }
+    // stage('Deployment') {
+    //     steps {
             
-        }
-    }
+    //     }
+    // }
 
   }
 
