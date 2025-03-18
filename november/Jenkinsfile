@@ -2,9 +2,10 @@ pipeline {
   agent { label 'worker' }
 
 
-//   environment {
+  environment {
+    DOCKER_CREDENTIALS = credentials('docker-cred')
 
-//   }
+  }
   
   stages {
     stage('Checkout Git repository') {
@@ -22,11 +23,13 @@ pipeline {
             }
         }
     }
-    // stage('Login to Docker') {
-    //     steps {
-            
-    //     }
-    // }
+    stage('Login to Docker') {
+        steps {
+            script {
+                sh "echo ${DOCKER_CREDENTIALS_PSW} | docker login -u ${DOCKER_CREDENTIALS_USR} --password-stdin"
+            }
+        }
+    }
     // stage('Push Docker Image') {
     //     steps {
             
