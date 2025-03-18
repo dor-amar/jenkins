@@ -1,0 +1,39 @@
+pipeline {
+  agent { label 'worker' }
+
+
+  environment {
+
+  }
+  
+  stages {
+    stage('Checkout Git repository') {
+        steps {
+            git branch: 'main', url: 'https://github.com/dor-amar/jenkins.git'
+        }
+    }
+    stage('Build Docker image') {
+        steps {
+
+
+        }
+    }
+    stage('Login to Docker') {
+        steps {
+            
+        }
+    }
+    stage('Push Docker Image') {
+        steps {
+            
+        }
+    }
+    stage('Deployment') {
+        steps {
+            
+        }
+    }
+
+  }
+
+}
