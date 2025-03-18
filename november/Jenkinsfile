@@ -2,9 +2,9 @@ pipeline {
   agent { label 'worker' }
 
 
-  environment {
+//   environment {
 
-  }
+//   }
   
   stages {
     stage('Checkout Git repository') {
