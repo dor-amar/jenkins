@@ -37,12 +37,12 @@ pipeline {
             }
         }
     }
-    // stage('Deployment') {
-    //     steps {
-            
-    //     }
-    // }
-
+    stage('Deployment') {
+        steps {
+            script {
+                sh "docker run -d doramar97/my-app-nov:latest"
+            }
+        }
+    }
   }
-
 }
