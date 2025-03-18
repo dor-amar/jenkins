@@ -12,13 +12,16 @@ pipeline {
             git branch: 'main', url: 'https://github.com/dor-amar/jenkins.git'
         }
     }
-    // stage('Build Docker image') {
-    //     steps {
-    //         sh "docker build "
+    stage('Build Docker image') {
+        steps {
+            script {
+                dir('november') {
+                    sh "docker build -t doramar97/my-app-nov:latest ."
+                }
 
-
-    //     }
-    // }
+            }
+        }
+    }
     // stage('Login to Docker') {
     //     steps {
             
