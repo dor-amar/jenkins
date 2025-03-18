@@ -40,7 +40,12 @@ pipeline {
     stage('Deployment') {
         steps {
             script {
-                sh "docker run -d -p 80:80 doramar97/my-app-nov:latest"
+                sh """
+                docker kill 05b4164a53bc
+                docker rm 05b4164a53bc
+                docker run -d -p 80:80 doramar97/my-app-nov:latest
+
+                """
             }
         }
     }
