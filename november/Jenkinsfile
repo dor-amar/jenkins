@@ -17,7 +17,7 @@ pipeline {
         steps {
             script {
                 dir('november') {
-                    sh "docker build -t doramar97/my-app-nov:latest ."
+                    sh "docker build -t doramar97/my-app-nov:${env.BUILD_NUMBER} ."
                 }
 
             }
@@ -41,7 +41,7 @@ pipeline {
         steps {
             script {
                 sh """
-                docker run -d -p 80:80 doramar97/my-app-nov:latest
+                docker run -d -p 80:80 doramar97/my-app-nov:${env.BUILD_NUMBER}
                 """
             }
         }
