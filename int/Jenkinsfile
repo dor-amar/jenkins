@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        DOCKERHUB_USERNAME = 'doramar97'
         DOCKERHUB_REPO = 'example'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
